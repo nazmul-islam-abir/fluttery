@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../config/app_config.dart';
 import '../theme.dart';
+import 'ad_banner.dart';
 
 // Top navigation — same on every page. Responsive:
 // Desktop: full links. Mobile: hamburger menu.
@@ -137,8 +139,14 @@ class PageShell extends StatelessWidget {
               constraints: const BoxConstraints(maxWidth: 1100),
               child: Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: width < 760 ? 16 : 32, vertical: 24),
-                child: child,
+                    horizontal: width < 760 ? 16 : 32, vertical: 16),
+                child: Column(
+                  children: [
+                    const AdBanner(slot: 'top'),
+                    child,
+                    const AdBanner(slot: 'native'),
+                  ],
+                ),
               ),
             ),
           ),
@@ -182,6 +190,15 @@ class _Footer extends StatelessWidget {
                         fontWeight: FontWeight.w800, fontSize: 18)),
               ],
             );
+            final partnerLink = InkWell(
+              onTap: () => launchUrl(Uri.parse(AppConfig.smartLinkUrl),
+                  mode: LaunchMode.externalApplication),
+              child: const Text('Partner Offers 🔥',
+                  style: TextStyle(
+                      color: FlutteryTheme.grey700,
+                      fontWeight: FontWeight.w600,
+                      decoration: TextDecoration.underline)),
+            );
             return isMobile
                 ? Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -190,6 +207,8 @@ class _Footer extends StatelessWidget {
                       const SizedBox(height: 6),
                       const Text('Learn Flutter, one video at a time.',
                           style: TextStyle(color: FlutteryTheme.grey700)),
+                      const SizedBox(height: 12),
+                      partnerLink,
                       const SizedBox(height: 16),
                       const Text('© 2026 Fluttery  •  Made for learners',
                           style: TextStyle(color: FlutteryTheme.grey500)),
@@ -206,8 +225,14 @@ class _Footer extends StatelessWidget {
                             const Text('Learn Flutter, one video at a time.',
                                 style: TextStyle(color: FlutteryTheme.grey700)),
                           ]),
-                      const Text('© 2026 Fluttery  •  Made for learners',
-                          style: TextStyle(color: FlutteryTheme.grey500)),
+                      Row(
+                        children: [
+                          partnerLink,
+                          const SizedBox(width: 16),
+                          const Text('© 2026 Fluttery  •  Made for learners',
+                              style: TextStyle(color: FlutteryTheme.grey500)),
+                        ],
+                      ),
                     ],
                   );
           }),

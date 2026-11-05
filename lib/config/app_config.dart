@@ -17,14 +17,18 @@ class AppConfig {
       'https://www.youtube.com/@infrarayy';
   static const String youtubeChannelHandle = '@infrarayy';
 
-  // ── Ads: Google AdSense (web) ───────────────────────────────────────────
-  // 1. Create an AdSense account, get your Publisher ID: ca-pub-XXXXXXXXXXXXXXXX
-  // 2. Paste it in web/index.html (search for ca-pub-) AND here.
-  // 3. Create ad units in AdSense and paste the slot IDs below.
-  // Until you paste real IDs, AdBanner shows a neat black placeholder
-  // labelled "Ad space" so your layout never breaks.
-  static const bool adsEnabled = false;
-  static const String adsensePublisherId = 'ca-pub-XXXXXXXXXXXXXXXX';
+  // ── Ads: Adsterra Monetization ───────────────────────────────────────────
+  static const bool adsEnabled = true;
+  static const String smartLinkUrl =
+      'https://araplhn.org/4/65f0e66190b22b6f3b6aec5f213121fc';
+
+  // Adsterra Banner Keys
+  static const String adKey728x90 = 'c1b092c51110094614f29406f68b197a'; // Leaderboard
+  static const String adKey468x60 = '9da836dd0d75a1a5b15008934d8f5869'; // Standard Banner
+  static const String adKey320x50 = '7195cd9643962ebe15a0eda53d2cc257'; // Mobile Banner
+  static const String adKey160x300 = 'e76a293979988f56728f8a1fcd4f66d4'; // Sidebar Skyscraper
+  static const String adKeyNative = '9e4783058b91342d7f1507c9969f8642'; // Native Banner
+
   static const String adSlotTopBanner = '1111111111'; // 728x90 / responsive
   static const String adSlotInFeed = '2222222222'; // between lesson cards
   static const String adSlotSidebar = '3333333333'; // lesson detail page
