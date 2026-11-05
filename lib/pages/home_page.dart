@@ -129,8 +129,8 @@ class HomePage extends StatelessWidget {
     return LayoutBuilder(builder: (context, c) {
       final cols = c.maxWidth > 900 ? 3 : c.maxWidth > 560 ? 2 : 1;
       final ratio = cols == 1
-          ? (c.maxWidth < 400 ? 0.92 : 1.05)
-          : (cols == 2 ? 0.75 : 0.82);
+          ? (c.maxWidth < 400 ? 0.72 : 0.78)
+          : (cols == 2 ? 0.72 : 0.78);
       return GridView.builder(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),

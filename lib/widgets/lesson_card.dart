@@ -53,33 +53,39 @@ class LessonCard extends StatelessWidget {
               ),
             ]),
           ),
-          Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Wrap(
-                    spacing: 8,
-                    runSpacing: 4,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      _chip(lesson.category),
-                      _chip(lesson.level, outlined: true),
+                      Wrap(
+                        spacing: 8,
+                        runSpacing: 4,
+                        children: [
+                          _chip(lesson.category),
+                          _chip(lesson.level, outlined: true),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Text(lesson.title,
+                          style: const TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.w700),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis),
+                      const SizedBox(height: 6),
+                      Text(lesson.summary,
+                          style: const TextStyle(
+                              color: FlutteryTheme.grey700, fontSize: 13),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis),
                     ],
                   ),
-                  const SizedBox(height: 10),
-                  Text(lesson.title,
-                      style: const TextStyle(
-                          fontSize: 16, fontWeight: FontWeight.w700),
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis),
-                  const SizedBox(height: 6),
-                  Text(lesson.summary,
-                      style: const TextStyle(
-                          color: FlutteryTheme.grey700, fontSize: 13),
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis),
-                  const SizedBox(height: 12),
                   Row(children: [
                     const Icon(Icons.file_download_outlined, size: 18),
                     const SizedBox(width: 6),
@@ -93,7 +99,9 @@ class LessonCard extends StatelessWidget {
                         style: TextStyle(
                             fontWeight: FontWeight.w700, fontSize: 13)),
                   ]),
-                ]),
+                ],
+              ),
+            ),
           ),
         ]),
       ),
