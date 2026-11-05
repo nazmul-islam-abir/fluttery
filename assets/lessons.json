@@ -1,0 +1,70 @@
+{
+  "lessons": [
+
+    {
+      "id": "learn-flutter-lists",
+      "slug": "learn-flutter-lists",
+      "title": "Learn Flutter Lists in 4 Minutes | Create, Add, Remove, Loop - Step by Step",
+      "category": "Basics",
+      "level": "Beginner",
+      "summary": "Create a list, add Orange, remove Banana, and loop through it to build the screen — in 4 minutes.",
+      "body": "A List in Dart holds many items in one variable — here, a list of fruits.\n\n1. Create — List<String> fruits = ['Apple', 'Banana', 'Mango'];\n2. Add — fruits.add('Orange'); adds one item at the end.\n3. Remove — fruits.remove('Banana'); takes that item out.\n4. Loop — a for loop goes through every fruit and makes one ListTile for it, so the screen shows the whole list.\n\nBecause the list changes inside setState, Flutter rebuilds the screen and you see the new list right away. Download lists_example.dart, run it, press Add Orange and Remove Banana, and watch the total count change.",
+      "youtubeId": "6msdwHB5Fd8",
+      "dartFileName": "lists_example.dart",
+      "dartFileUrl": "",
+      "codePreview": "List<String> fruits = ['Apple', 'Banana', 'Mango'];\n\nfruits.add('Orange');\nfruits.remove('Banana');\n\nfor (final fruit in fruits) {\n  print(fruit);\n}",
+      "order": 4,
+      "featured": false,
+      "tags": [
+        "list",
+        "add",
+        "remove",
+        "loop"
+      ]
+    },
+    {
+      "id": "dart-list-methods",
+      "slug": "dart-list-methods",
+      "title": "Dart List Methods in Flutter | map, where, firstWhere & sort",
+      "category": "Basics",
+      "level": "Beginner",
+      "summary": "Master essential Dart list methods like map, where, firstWhere, and sort to filter and transform data efficiently.",
+      "body": "Dart lists provide powerful built-in methods to transform, filter, and sort data with minimal code.\n\n1. map — Transforms every item in a list into a new form and creates a new list.\n2. where — Filters a list, keeping only the items that pass a true/false condition.\n3. firstWhere — Finds the very first matching item, with an orElse fallback if no match is found.\n4. sort — Reorders items in-place alphabetically or using custom criteria like string length.\n\nDownload main3.dart to run and experiment with these list methods in Flutter!",
+      "youtubeId": "OIvXtu14QlQ",
+      "dartFileName": "main3.dart",
+      "dartFileUrl": "",
+      "codePreview": "final upperFruits = fruits.map((f) => f.toUpperCase()).toList();\nfinal aFruits = fruits.where((f) => f.startsWith('A')).toList();\nfinal sortedFruits = [...fruits]..sort();",
+      "order": 5,
+      "featured": false,
+      "tags": [
+        "list",
+        "map",
+        "where",
+        "sort",
+        "dart"
+      ]
+    },
+    {
+      "id": "dart-set-explained",
+      "slug": "dart-set-explained",
+      "title": "Set in Dart & Flutter | Unique Values, Union, Intersection & Difference",
+      "category": "Basics",
+      "level": "Beginner",
+      "summary": "Learn how Set in Dart automatically removes duplicate values and explore set operations like union, intersection, and difference.",
+      "body": "A Set in Dart is an unordered collection of unique items. Unlike a List, a Set will never contain duplicate values.\n\n1. Automatic Duplicates Removal — Adding duplicate items into a Set does nothing.\n2. Add & Remove — Work just like List methods using add() and remove().\n3. contains() — Fast check to see if an item exists in the Set.\n4. Set Operations — Perform union(), intersection(), and difference() between two sets effortlessly.\n\nDownload main4.dart to run and experiment with Dart Sets in Flutter!",
+      "youtubeId": "aQpx31GqD34",
+      "dartFileName": "main4.dart",
+      "dartFileUrl": "",
+      "codePreview": "final Set<String> fruits = {'Apple', 'Banana', 'Mango', 'Apple'};\n// Duplicate 'Apple' is ignored\nfruits.add('Orange');\nfinal bool hasMango = fruits.contains('Mango');",
+      "order": 6,
+      "featured": false,
+      "tags": [
+        "set",
+        "dart",
+        "union",
+        "intersection",
+        "unique"
+      ]
+    }
+  ]
+}

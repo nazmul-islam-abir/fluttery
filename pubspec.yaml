@@ -1,0 +1,32 @@
+name: fluttery
+description: "Fluttery — Learn Flutter step by step. Watch on YouTube, read the blog, download the .dart file."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.4.0
+  flutter: ">=3.22.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # NO FIREBASE AT ALL in this version — no firebase_core, no Firestore,
+  # no Storage, no account, no card. Lessons are in assets/lessons.json.
+  # Routing — clean URLs like /lesson/what-is-a-loop
+  go_router: ^14.6.0
+  # YouTube embed for web
+  youtube_player_iframe: ^5.1.0
+  url_launcher: ^6.3.0
+  google_fonts: ^6.2.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/dart_files/
+    - assets/lessons.json
+    - assets/images/

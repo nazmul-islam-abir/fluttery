@@ -1,0 +1,10 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Anyone can DOWNLOAD .dart files. Only you (in Console) can upload.
+    match /dart_files/{fileName} {
+      allow read: if true;
+      allow write: if false;
+    }
+  }
+}

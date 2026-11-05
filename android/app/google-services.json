@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "472554069619",
+    "project_id": "fluttery-169d2",
+    "storage_bucket": "fluttery-169d2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:472554069619:android:0a18a7978454c18a59d406",
+        "android_client_info": {
+          "package_name": "com.example.fluttery"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAS-WDd2Qo92uWvu0vHxxS7FQI28GZht88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

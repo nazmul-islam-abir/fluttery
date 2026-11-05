@@ -1,0 +1,12 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // No login on Fluttery. Visitors can READ lessons.
+    // NOBODY can write from the website — you add lessons only
+    // in the Firebase Console. That keeps the site safe without Auth.
+    match /lessons/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+  }
+}
