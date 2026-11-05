@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../config/app_config.dart';
 import '../theme.dart';
 
 // Top navigation — same on every page. Responsive:
@@ -27,19 +28,28 @@ class FlutteryNavBar extends StatelessWidget implements PreferredSizeWidget {
           InkWell(
             onTap: () => context.go('/'),
             child: Row(children: [
-              Container(
-                width: 32,
-                height: 32,
-                decoration: BoxDecoration(
-                  color: FlutteryTheme.black,
-                  borderRadius: BorderRadius.circular(8),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Image.asset(
+                  AppConfig.logoPath,
+                  width: 36,
+                  height: 36,
+                  fit: BoxFit.cover,
+                  errorBuilder: (_, __, ___) => Container(
+                    width: 36,
+                    height: 36,
+                    decoration: BoxDecoration(
+                      color: FlutteryTheme.black,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: const Center(
+                        child: Text('F',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w800,
+                                fontSize: 18))),
+                  ),
                 ),
-                child: const Center(
-                    child: Text('F',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w800,
-                            fontSize: 18))),
               ),
               const SizedBox(width: 10),
               const Text('Fluttery',
@@ -153,36 +163,50 @@ class _Footer extends StatelessWidget {
           constraints: const BoxConstraints(maxWidth: 1100),
           child: LayoutBuilder(builder: (context, c) {
             final isMobile = c.maxWidth < 600;
+            final brandHeader = Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(6),
+                  child: Image.asset(
+                    AppConfig.logoPath,
+                    width: 24,
+                    height: 24,
+                    fit: BoxFit.cover,
+                    errorBuilder: (_, __, ___) => const SizedBox.shrink(),
+                  ),
+                ),
+                const SizedBox(width: 8),
+                const Text('Fluttery',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w800, fontSize: 18)),
+              ],
+            );
             return isMobile
-                ? const Column(
+                ? Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Fluttery',
-                          style: TextStyle(
-                              fontWeight: FontWeight.w800, fontSize: 18)),
-                      SizedBox(height: 6),
-                      Text('Learn Flutter, one video at a time.',
+                      brandHeader,
+                      const SizedBox(height: 6),
+                      const Text('Learn Flutter, one video at a time.',
                           style: TextStyle(color: FlutteryTheme.grey700)),
-                      SizedBox(height: 16),
-                      Text('© 2026 Fluttery  •  Made for learners',
+                      const SizedBox(height: 16),
+                      const Text('© 2026 Fluttery  •  Made for learners',
                           style: TextStyle(color: FlutteryTheme.grey500)),
                     ],
                   )
-                : const Row(
+                : Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('Fluttery',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w800,
-                                    fontSize: 18)),
-                            SizedBox(height: 6),
-                            Text('Learn Flutter, one video at a time.',
+                            brandHeader,
+                            const SizedBox(height: 6),
+                            const Text('Learn Flutter, one video at a time.',
                                 style: TextStyle(color: FlutteryTheme.grey700)),
                           ]),
-                      Text('© 2026 Fluttery  •  Made for learners',
+                      const Text('© 2026 Fluttery  •  Made for learners',
                           style: TextStyle(color: FlutteryTheme.grey500)),
                     ],
                   );

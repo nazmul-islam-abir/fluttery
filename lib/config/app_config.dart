@@ -8,6 +8,9 @@ class AppConfig {
       'Simple Flutter lessons in plain language. Watch the YouTube video, '
       'read the short blog, download the .dart file and run it yourself.';
 
+  static const String logoPath = 'assets/logo.jpg';
+  static const String bannerPath = 'assets/banner.jpg';
+
   // Your YouTube channel — used for Subscribe / Watch on YouTube buttons.
   // Paste your channel URL here after you create it.
   static const String youtubeChannelUrl =
@@ -20,7 +23,7 @@ class AppConfig {
   // 3. Create ad units in AdSense and paste the slot IDs below.
   // Until you paste real IDs, AdBanner shows a neat black placeholder
   // labelled "Ad space" so your layout never breaks.
-  static const bool adsEnabled = true;
+  static const bool adsEnabled = false;
   static const String adsensePublisherId = 'ca-pub-XXXXXXXXXXXXXXXX';
   static const String adSlotTopBanner = '1111111111'; // 728x90 / responsive
   static const String adSlotInFeed = '2222222222'; // between lesson cards

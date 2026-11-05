@@ -76,8 +76,8 @@ class _TopicsPageState extends State<TopicsPage> {
             return LayoutBuilder(builder: (context, c) {
               final cols = c.maxWidth > 900 ? 3 : c.maxWidth > 560 ? 2 : 1;
               final ratio = cols == 1
-                  ? (c.maxWidth < 400 ? 0.72 : 0.78)
-                  : (cols == 2 ? 0.72 : 0.78);
+                  ? (c.maxWidth < 400 ? 0.65 : 0.70)
+                  : (cols == 2 ? 0.68 : 0.76);
               return Column(
                 children: [
                   GridView.builder(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../config/app_config.dart';
 import '../data/sample_lessons.dart';
 import '../services/lesson_service.dart';
 import '../widgets/ad_banner.dart';
@@ -27,7 +28,9 @@ class HomePage extends StatelessWidget {
             // ── Hero ──
             Padding(
               padding: EdgeInsets.symmetric(vertical: isMobile ? 24 : 48),
-              child: Column(
+              child: LayoutBuilder(builder: (context, constraints) {
+                final isWide = constraints.maxWidth > 800;
+                final textContent = Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
@@ -65,7 +68,45 @@ class HomePage extends StatelessWidget {
                     const SizedBox(height: 16),
                     Text('${lessons.length} lessons  •  New videos weekly',
                         style: const TextStyle(color: FlutteryTheme.grey500)),
-                  ]),
+                  ],
+                );
+
+                final bannerCard = Container(
+                  clipBehavior: Clip.antiAlias,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(color: FlutteryTheme.grey200),
+                  ),
+                  child: Image.asset(
+                    AppConfig.bannerPath,
+                    fit: BoxFit.cover,
+                    errorBuilder: (_, __, ___) => Image.asset(
+                      AppConfig.logoPath,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                );
+
+                if (isWide) {
+                  return Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Expanded(flex: 5, child: textContent),
+                      const SizedBox(width: 32),
+                      Expanded(flex: 4, child: bannerCard),
+                    ],
+                  );
+                } else {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      textContent,
+                      const SizedBox(height: 24),
+                      bannerCard,
+                    ],
+                  );
+                }
+              }),
             ),
             const AdBanner(slot: 'top'),
             // ── How it works ──
@@ -129,8 +170,8 @@ class HomePage extends StatelessWidget {
     return LayoutBuilder(builder: (context, c) {
       final cols = c.maxWidth > 900 ? 3 : c.maxWidth > 560 ? 2 : 1;
       final ratio = cols == 1
-          ? (c.maxWidth < 400 ? 0.72 : 0.78)
-          : (cols == 2 ? 0.72 : 0.78);
+          ? (c.maxWidth < 400 ? 0.65 : 0.70)
+          : (cols == 2 ? 0.68 : 0.76);
       return GridView.builder(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),

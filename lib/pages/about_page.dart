@@ -11,8 +11,38 @@ class AboutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageShell(
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        const Text('About Fluttery',
-            style: TextStyle(fontSize: 32, fontWeight: FontWeight.w800)),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: Image.asset(
+            AppConfig.bannerPath,
+            width: double.infinity,
+            height: 220,
+            fit: BoxFit.cover,
+            errorBuilder: (_, __, ___) => Image.asset(
+              AppConfig.logoPath,
+              width: double.infinity,
+              height: 220,
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        const SizedBox(height: 24),
+        Row(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.asset(
+                AppConfig.logoPath,
+                width: 40,
+                height: 40,
+                fit: BoxFit.cover,
+              ),
+            ),
+            const SizedBox(width: 12),
+            const Text('About Fluttery',
+                style: TextStyle(fontSize: 32, fontWeight: FontWeight.w800)),
+          ],
+        ),
         const SizedBox(height: 16),
         const Text(
           'Fluttery is a free place to learn Flutter by doing.\n\n'

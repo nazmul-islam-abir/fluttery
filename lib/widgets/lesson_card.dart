@@ -41,7 +41,7 @@ class LessonCard extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                   decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.85),
+                      color: Colors.black87,
                       borderRadius: BorderRadius.circular(6)),
                   child: const Row(mainAxisSize: MainAxisSize.min, children: [
                     Icon(Icons.play_arrow, color: Colors.white, size: 14),
@@ -55,7 +55,7 @@ class LessonCard extends StatelessWidget {
           ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(14),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -72,33 +72,45 @@ class LessonCard extends StatelessWidget {
                           _chip(lesson.level, outlined: true),
                         ],
                       ),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: 8),
                       Text(lesson.title,
                           style: const TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.w700),
+                              fontSize: 15, fontWeight: FontWeight.w700),
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis),
-                      const SizedBox(height: 6),
+                      const SizedBox(height: 4),
                       Text(lesson.summary,
                           style: const TextStyle(
-                              color: FlutteryTheme.grey700, fontSize: 13),
+                              color: FlutteryTheme.grey700, fontSize: 12.5),
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis),
                     ],
                   ),
-                  Row(children: [
-                    const Icon(Icons.file_download_outlined, size: 18),
-                    const SizedBox(width: 6),
-                    Expanded(
-                        child: Text(lesson.dartFileName,
-                            style: const TextStyle(
-                                fontWeight: FontWeight.w600, fontSize: 13),
-                            overflow: TextOverflow.ellipsis)),
-                    const SizedBox(width: 6),
-                    const Text('Read →',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w700, fontSize: 13)),
-                  ]),
+                  const SizedBox(height: 8),
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: FlutteryTheme.grey100,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Row(children: [
+                      const Icon(Icons.file_download_outlined, size: 16),
+                      const SizedBox(width: 6),
+                      Expanded(
+                          child: Text(lesson.dartFileName,
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.w600, fontSize: 12),
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 1)),
+                      const SizedBox(width: 6),
+                      const Text('Read →',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 12,
+                              color: FlutteryTheme.black)),
+                    ]),
+                  ),
                 ],
               ),
             ),
