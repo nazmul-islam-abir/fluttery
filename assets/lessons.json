@@ -87,6 +87,28 @@
         "key-value",
         "flutter"
       ]
+    },
+    {
+      "id": "dart-functions-explained",
+      "slug": "dart-functions-explained",
+      "title": "Learn Functions in Dart in 7 Minutes | Define, Call, Parameters, Return - Flutter Step by Step",
+      "category": "Basics",
+      "level": "Beginner",
+      "summary": "Learn how to define, call, pass parameters, and return values with Dart functions to write clean, reusable Flutter code.",
+      "body": "Functions allow you to package reusable logic in Dart so you don't repeat the same code.\n\n1. Define a Function — Specify the return type, function name, parameters, and function body.\n2. Return Values — Use return to give back data (e.g. String greet(String name)).\n3. void Functions — Use void when a function performs an action without returning a value (e.g. logWelcome()).\n4. Parameters & Arguments — Pass variables into functions to make them dynamic and flexible.\n\nDownload main6.dart to run and experiment with Dart functions in Flutter!",
+      "youtubeId": "L-lRQ5Vsd_0",
+      "dartFileName": "main6.dart",
+      "dartFileUrl": "",
+      "codePreview": "String greet(String name) {\n  return 'Hello, $name!';\n}\n\nint add(int a, int b) {\n  return a + b;\n}\n\nvoid logWelcome(String name) {\n  print('Welcome, $name!');\n}",
+      "order": 8,
+      "featured": false,
+      "tags": [
+        "functions",
+        "dart",
+        "parameters",
+        "return",
+        "flutter"
+      ]
     }
   ]
 }
