@@ -65,6 +65,28 @@
         "intersection",
         "unique"
       ]
+    },
+    {
+      "id": "dart-map-explained",
+      "slug": "dart-map-explained",
+      "title": "Learn Map in Dart in 5 Minutes | Key-Value, JSON, Nested Data - Flutter Step by Step",
+      "category": "Basics",
+      "level": "Beginner",
+      "summary": "Master Map in Dart with key-value pairs, JSON parsing, adding/updating/removing entries, and nested data structures.",
+      "body": "A Map in Dart stores data as key-value pairs, similar to JSON objects.\n\n1. Create & Access — Define Map<String, dynamic> and retrieve items by key using map['key'].\n2. Add, Update & Remove — Modify entries effortlessly or remove unwanted keys with remove().\n3. Keys, Values & Loop — Access .keys, .values, or iterate entries to build UI dynamically.\n4. JSON Parsing — Decode JSON strings into Maps using jsonDecode() to handle API responses and nested data structures.\n\nDownload main5.dart to run and experiment with Dart Maps in Flutter!",
+      "youtubeId": "U6efik968gg",
+      "dartFileName": "main5.dart",
+      "dartFileUrl": "",
+      "codePreview": "final Map<String, dynamic> user = {'name': 'Abir', 'age': 22};\nuser['city'] = 'Dhaka';\nfinal String jsonString = jsonEncode(user);\nfinal decoded = jsonDecode(jsonString) as Map<String, dynamic>;",
+      "order": 7,
+      "featured": false,
+      "tags": [
+        "map",
+        "dart",
+        "json",
+        "key-value",
+        "flutter"
+      ]
     }
   ]
 }
