@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'pages/about_page.dart';
@@ -30,6 +31,23 @@ final _router = GoRouter(
   errorBuilder: (_, __) => const HomePage(),
 );
 
+class FlutteryScrollBehavior extends MaterialScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+        PointerDeviceKind.trackpad,
+        PointerDeviceKind.stylus,
+      };
+
+  @override
+  ScrollPhysics getScrollPhysics(BuildContext context) {
+    return const BouncingScrollPhysics(
+      parent: AlwaysScrollableScrollPhysics(),
+    );
+  }
+}
+
 class FlutteryApp extends StatelessWidget {
   const FlutteryApp({super.key});
   @override
@@ -38,6 +56,7 @@ class FlutteryApp extends StatelessWidget {
       title: 'Fluttery — Learn Flutter, one video at a time',
       debugShowCheckedModeBanner: false,
       theme: FlutteryTheme.light(),
+      scrollBehavior: FlutteryScrollBehavior(),
       routerConfig: _router,
     );
   }

@@ -8,17 +8,20 @@ import 'package:google_fonts/google_fonts.dart';
 class FlutteryTheme {
   static const black = Color(0xFF111111);
   static const white = Color(0xFFFFFFFF);
-  static const grey900 = Color(0xFF1A1A1A);
-  static const grey700 = Color(0xFF555555);
-  static const grey500 = Color(0xFF8A8A8A);
-  static const grey200 = Color(0xFFE8E8E8);
-  static const grey100 = Color(0xFFF5F5F5);
-  static const grey50 = Color(0xFFFAFAFA);
+  static const darkHeader = Color(0xFF0B132B);
+  static const tealBrand = Color(0xFF064E3B);
+  static const grey900 = Color(0xFF111827);
+  static const grey700 = Color(0xFF374151);
+  static const grey500 = Color(0xFF6B7280);
+  static const grey300 = Color(0xFFD1D5DB);
+  static const grey200 = Color(0xFFE5E7EB);
+  static const grey100 = Color(0xFFF3F4F6);
+  static const grey50 = Color(0xFFF9FAFB);
 
   static ThemeData light() {
     final base = ThemeData.light(useMaterial3: true);
     return base.copyWith(
-      scaffoldBackgroundColor: white,
+      scaffoldBackgroundColor: grey50,
       colorScheme: const ColorScheme.light(
         primary: black,
         onPrimary: white,
@@ -28,7 +31,7 @@ class FlutteryTheme {
       ),
       textTheme: GoogleFonts.interTextTheme(base.textTheme).copyWith(
         displayLarge: GoogleFonts.inter(
-            fontSize: 48, fontWeight: FontWeight.w800, color: black, height: 1.05),
+            fontSize: 48, fontWeight: FontWeight.w800, color: black, height: 1.08),
         headlineMedium: GoogleFonts.inter(
             fontSize: 32, fontWeight: FontWeight.w800, color: black, height: 1.15),
         titleLarge: GoogleFonts.inter(
@@ -53,8 +56,8 @@ class FlutteryTheme {
           backgroundColor: black,
           foregroundColor: white,
           elevation: 0,
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 14),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           textStyle: const TextStyle(fontWeight: FontWeight.w600, fontSize: 15),
         ),
       ),
@@ -62,23 +65,23 @@ class FlutteryTheme {
         style: OutlinedButton.styleFrom(
           foregroundColor: black,
           side: const BorderSide(color: black, width: 1.5),
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 14),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         ),
       ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: grey50,
+        fillColor: white,
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(10),
           borderSide: const BorderSide(color: grey200),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(10),
           borderSide: const BorderSide(color: grey200),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(10),
           borderSide: const BorderSide(color: black, width: 1.5),
         ),
       ),
@@ -86,10 +89,30 @@ class FlutteryTheme {
     );
   }
 
-  // Shared card style — white, 1px border, soft shadow only.
+  // Shared card style — crisp border, soft depth.
   static BoxDecoration card = BoxDecoration(
     color: white,
     border: Border.all(color: grey200),
-    borderRadius: BorderRadius.circular(12),
+    borderRadius: BorderRadius.circular(16),
+    boxShadow: [
+      BoxShadow(
+        color: Colors.black.withOpacity(0.03),
+        blurRadius: 14,
+        offset: const Offset(0, 4),
+      ),
+    ],
+  );
+
+  static BoxDecoration cardHover = BoxDecoration(
+    color: white,
+    border: Border.all(color: black, width: 1.2),
+    borderRadius: BorderRadius.circular(16),
+    boxShadow: [
+      BoxShadow(
+        color: Colors.black.withOpacity(0.08),
+        blurRadius: 20,
+        offset: const Offset(0, 8),
+      ),
+    ],
   );
 }
