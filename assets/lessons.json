@@ -109,6 +109,248 @@
         "return",
         "flutter"
       ]
+    },
+    {
+      "id": "dart-parameters-explained",
+      "slug": "dart-parameters-explained",
+      "title": "Learn Parameters in Dart | Positional, Named, Required, Default - Flutter Step by Step",
+      "category": "Basics",
+      "level": "Beginner",
+      "summary": "Master positional, named, required, and default function parameters in Dart to build cleaner Flutter widgets and APIs.",
+      "body": "Dart parameters give you flexibility when passing arguments into functions and widgets.\n\n1. Positional Parameters — Order matters: add(int a, int b).\n2. Named Parameters — Wrapped in {}: createUser({required String name, required int age}). Order doesn't matter.\n3. Default Values — Set fallback values: greet({String name = 'Guest'}).\n4. Optional Positional Parameters — Wrapped in []: totalPrice(double price, [double discount = 0]).\n\nDownload main7.dart to run and experiment with parameters in Flutter!",
+      "youtubeId": "8VOqbsVbDAc",
+      "dartFileName": "main7.dart",
+      "dartFileUrl": "",
+      "codePreview": "String createUser({required String name, required int age}) {\n  return '$name, $age years old';\n}\n\nString greet({String name = 'Guest'}) {\n  return 'Hello, $name';\n}",
+      "order": 9,
+      "featured": false,
+      "tags": [
+        "parameters",
+        "named",
+        "required",
+        "dart",
+        "flutter"
+      ]
+    },
+    {
+      "id": "dart-return-arrow-functions",
+      "slug": "dart-return-arrow-functions",
+      "title": "Learn Return Values and Arrow Functions in Dart in 7 Minutes | Flutter Step by Step",
+      "category": "Basics",
+      "level": "Beginner",
+      "summary": "Understand return types and arrow syntax (=>) in Dart to write concise, single-line functions in Flutter.",
+      "body": "Arrow functions in Dart provide a short syntax for single-expression functions.\n\n1. Block Functions — Use curly braces and explicit return statements: int add(int a, int b) { return a + b; }.\n2. Arrow Functions — Use => for single expressions: int add(int a, int b) => a + b;\n3. When to use Arrow — Ideal for callbacks, list mappings, and simple getters.\n4. When to use Block — Multi-step logic requires standard curly braces and explicit returns.\n\nDownload main8.dart to run and test block vs. arrow functions in Flutter!",
+      "youtubeId": "-owqwvPtWCs",
+      "dartFileName": "main8.dart",
+      "dartFileUrl": "",
+      "codePreview": "int addArrow(int a, int b) => a + b;\nString greetArrow(String name) => 'Hello, $name!';\nfinal doubled = [1, 2, 3].map((n) => n * 2).toList();",
+      "order": 10,
+      "featured": false,
+      "tags": [
+        "arrow-functions",
+        "return",
+        "dart",
+        "syntax",
+        "flutter"
+      ]
+    },
+    {
+      "id": "dart-null-safety-explained",
+      "slug": "dart-null-safety-explained",
+      "title": "Learn Null Safety in Dart in 6 Minutes | ?, ??, ??=, !, late - Flutter Step by Step",
+      "category": "Basics",
+      "level": "Beginner",
+      "summary": "Master sound null safety in Dart using nullable types (?), null-aware operators (??, ??=), assertion (!), and late variables.",
+      "body": "Dart sound null safety prevents runtime null errors by forcing variables to be explicitly nullable or non-nullable.\n\n1. Nullable Type (?) — String? name = null; allows variable to hold null.\n2. Null-Aware Fallback (??) — String name = userName ?? 'Guest'; provides a default value if null.\n3. Null-Aware Assignment (??=) — city ??= 'Dhaka'; assigns value only if variable is currently null.\n4. Late Initialization (late) — Declares non-nullable variables that are initialized later.\n\nDownload main9.dart to experiment with null safety operators in Flutter!",
+      "youtubeId": "nd6jz7soxpk",
+      "dartFileName": "main9.dart",
+      "dartFileUrl": "",
+      "codePreview": "String? name;\nString displayName = name ?? 'Guest';\nlate String city;\ncity = 'Dhaka';",
+      "order": 11,
+      "featured": false,
+      "tags": [
+        "null-safety",
+        "dart",
+        "operators",
+        "late",
+        "flutter"
+      ]
+    },
+    {
+      "id": "dart-class-and-object",
+      "slug": "dart-class-and-object",
+      "title": "Learn Class and Object in Dart in 6 Minutes | Blueprint, Constructor, Methods - Flutter Step by Step",
+      "category": "Basics",
+      "level": "Beginner",
+      "summary": "Understand object-oriented programming in Dart by creating classes, instantiating objects, and defining properties and methods.",
+      "body": "Classes are blueprints for creating objects in Dart. Almost everything in Flutter is built using classes.\n\n1. Class Blueprint — Defines fields (data) and methods (actions).\n2. Constructor — Initializes class instances with data.\n3. Object Creation — Create multiple instances with different data from the same blueprint class.\n4. Methods — Perform actions on object data (e.g. user.greet()).\n\nDownload main10.dart to build custom classes and objects in Flutter!",
+      "youtubeId": "1xYBBJyvWSA",
+      "dartFileName": "main10.dart",
+      "dartFileUrl": "",
+      "codePreview": "class User {\n  final String name;\n  final int age;\n  User(this.name, this.age);\n  String greet() => 'Hello, $name';\n}",
+      "order": 12,
+      "featured": false,
+      "tags": [
+        "class",
+        "object",
+        "oop",
+        "constructor",
+        "dart"
+      ]
+    },
+    {
+      "id": "dart-anonymous-functions-callbacks",
+      "slug": "dart-anonymous-functions-callbacks",
+      "title": "Learn Anonymous Functions and Callbacks in Dart in 6 Minutes | Flutter Step by Step",
+      "category": "Basics",
+      "level": "Beginner",
+      "summary": "Learn anonymous (lambda) functions and callbacks in Dart — the foundation of Flutter button onPressed handlers and event listeners.",
+      "body": "Anonymous functions (nameless functions) and callbacks allow you to pass executable code as arguments.\n\n1. Anonymous Function — () { print('Tapped!'); } has no function name.\n2. Callbacks in Widgets — Used in Flutter button handlers like onPressed: () {}.\n3. Passing Functions as Arguments — Higher-order functions accept callbacks to handle events dynamically.\n\nDownload main11.dart to run and test callbacks in Flutter!",
+      "youtubeId": "yhfkDIMHk9g",
+      "dartFileName": "main11.dart",
+      "dartFileUrl": "",
+      "codePreview": "ElevatedButton(\n  onPressed: () {\n    print('Button Clicked!');\n  },\n  child: Text('Tap Me'),\n)",
+      "order": 13,
+      "featured": false,
+      "tags": [
+        "anonymous-functions",
+        "callbacks",
+        "dart",
+        "onPressed",
+        "flutter"
+      ]
+    },
+    {
+      "id": "dart-constructors-explained",
+      "slug": "dart-constructors-explained",
+      "title": "Learn Constructors in Dart in 6 Minutes | Default, Named, Factory, Const - Flutter Step by Step",
+      "category": "Basics",
+      "level": "Beginner",
+      "summary": "Master generative, named, factory, and const constructors in Dart to create efficient, immutable objects in Flutter.",
+      "body": "Constructors build instances of a class. Dart provides specialized constructor types for different needs.\n\n1. Generative Constructor — Standard constructor initializing fields.\n2. Named Constructor — Class.named() provides alternative ways to instantiate.\n3. Const Constructor — Creates immutable compile-time constant objects for high Flutter performance.\n4. Factory Constructor — Returns cached or custom instances instead of creating a new object every time.\n\nDownload Constructors.dart to experiment with constructors in Flutter!",
+      "youtubeId": "1kttEpPUe4w",
+      "dartFileName": "Constructors.dart",
+      "dartFileUrl": "",
+      "codePreview": "class User {\n  final String name;\n  const User(this.name);\n  User.guest() : name = 'Guest';\n}",
+      "order": 14,
+      "featured": false,
+      "tags": [
+        "constructors",
+        "const",
+        "factory",
+        "named-constructor",
+        "dart"
+      ]
+    },
+    {
+      "id": "dart-encapsulation-explained",
+      "slug": "dart-encapsulation-explained",
+      "title": "Learn Encapsulation in Dart in 6 Minutes | Private, Getter, Setter - Flutter Step by Step",
+      "category": "Basics",
+      "level": "Intermediate",
+      "summary": "Protect data using private fields (_) and control field access using getters and setters in Dart.",
+      "body": "Encapsulation hides internal class implementation details and validates data changes.\n\n1. Private Fields (_) — Prefix variables with _ to restrict access outside the library file.\n2. Getters (get) — Provide controlled read-only access to private data.\n3. Setters (set) — Control and validate data before writing or updating fields.\n\nDownload ENCAPSULATION.dart to run and test encapsulation in Flutter!",
+      "youtubeId": "OICtkPIH47U",
+      "dartFileName": "ENCAPSULATION.dart",
+      "dartFileUrl": "",
+      "codePreview": "class BankAccount {\n  double _balance = 0;\n  double get balance => _balance;\n  set deposit(double amount) {\n    if (amount > 0) _balance += amount;\n  }\n}",
+      "order": 15,
+      "featured": false,
+      "tags": [
+        "encapsulation",
+        "private",
+        "getter",
+        "setter",
+        "dart"
+      ]
+    },
+    {
+      "id": "dart-inheritance-explained",
+      "slug": "dart-inheritance-explained",
+      "title": "Learn Inheritance in Dart in 6 Minutes | extends, super, override - Flutter Step by Step",
+      "category": "Basics",
+      "level": "Intermediate",
+      "summary": "Reuse code efficiently using class inheritance with extends, super constructor calls, and @override methods in Dart.",
+      "body": "Inheritance allows a child class to inherit properties and methods from a parent class.\n\n1. extends Keyword — Child class inherits from parent class: class Student extends Person.\n2. super Keyword — Pass arguments up to parent constructor: super(name, age).\n3. @override Annotation — Override parent methods to customize child behavior.\n\nDownload inheritance.dart to experiment with class inheritance in Flutter!",
+      "youtubeId": "IZjgzUCRKho",
+      "dartFileName": "inheritance.dart",
+      "dartFileUrl": "",
+      "codePreview": "class Person {\n  final String name;\n  Person(this.name);\n}\n\nclass Student extends Person {\n  final String grade;\n  Student(super.name, this.grade);\n}",
+      "order": 16,
+      "featured": false,
+      "tags": [
+        "inheritance",
+        "extends",
+        "super",
+        "override",
+        "dart"
+      ]
+    },
+    {
+      "id": "dart-abstract-class-explained",
+      "slug": "dart-abstract-class-explained",
+      "title": "Learn Abstract Class in Dart | Blueprint You Cannot Make, Abstract Method - Flutter Step by Step",
+      "category": "Basics",
+      "level": "Intermediate",
+      "summary": "Define abstract classes and methods in Dart to create shared architecture blueprints that child classes must implement.",
+      "body": "Abstract classes serve as blueprints that cannot be directly instantiated with new/constructor calls.\n\n1. abstract Keyword — Prevents direct instantiation of the class.\n2. Abstract Methods — Method signatures without a body that subclasses MUST implement.\n3. Concrete Methods — Abstract classes can also include fully implemented helper methods.\n\nDownload abstract-class.dart to test abstract classes in Flutter!",
+      "youtubeId": "slPVFFOwStU",
+      "dartFileName": "abstract-class.dart",
+      "dartFileUrl": "",
+      "codePreview": "abstract class Shape {\n  double get area;\n}\n\nclass Circle extends Shape {\n  final double radius;\n  Circle(this.radius);\n  @override\n  double get area => 3.14 * radius * radius;\n}",
+      "order": 17,
+      "featured": false,
+      "tags": [
+        "abstract-class",
+        "blueprint",
+        "oop",
+        "dart",
+        "flutter"
+      ]
+    },
+    {
+      "id": "dart-interface-explained",
+      "slug": "dart-interface-explained",
+      "title": "Learn Interface in Dart in 6 Minutes | implements, Contract, No Code - Flutter Step by Step",
+      "category": "Basics",
+      "level": "Intermediate",
+      "summary": "Use the implements keyword in Dart to enforce interface contracts where classes must fulfill all declared properties and methods.",
+      "body": "In Dart, every class implicitly defines an interface.\n\n1. implements Keyword — Forces a class to implement all methods and fields of another class.\n2. Multiple Interfaces — A class can implement multiple interfaces: class MobileApp implements Auth, Database.\n3. Interface vs. Inheritance — Inheritance extends concrete code; interfaces enforce strict API contracts.\n\nDownload interface.dart to run and test interfaces in Flutter!",
+      "youtubeId": "BDk5F1zNg7o",
+      "dartFileName": "interface.dart",
+      "dartFileUrl": "",
+      "codePreview": "abstract class PaymentGateway {\n  void pay(double amount);\n}\n\nclass Bkash implements PaymentGateway {\n  @override\n  void pay(double amount) => print('Paid \$amount via bKash');\n}",
+      "order": 18,
+      "featured": false,
+      "tags": [
+        "interface",
+        "implements",
+        "contract",
+        "dart",
+        "flutter"
+      ]
+    },
+    {
+      "id": "dart-polymorphism-explained",
+      "slug": "dart-polymorphism-explained",
+      "title": "Learn Polymorphism in Dart in 8 Minutes | Real Shop App, One Call, Many Ways - Flutter Step by Step",
+      "category": "Basics",
+      "level": "Intermediate",
+      "summary": "Master polymorphism in Dart to treat different objects uniformly through a common parent class or interface.",
+      "body": "Polymorphism ('many shapes') allows a single method call to execute different behaviors based on the runtime object type.\n\n1. Uniform List — Store different child objects in a single parent type list: List<PaymentProcessor>.\n2. One Call, Many Ways — Iterate through objects and call the same method; each class responds with its own implementation.\n3. Real-World Usage — Essential for payment systems, custom UI widget lists, and clean architecture.\n\nDownload polymorphism.dart to run a complete Shop Payment example in Flutter!",
+      "youtubeId": "JT62zfML23w",
+      "dartFileName": "polymorphism.dart",
+      "dartFileUrl": "",
+      "codePreview": "final List<PaymentMethod> methods = [CardPayment(), BkashPayment()];\nfor (final method in methods) {\n  method.processPayment(500);\n}",
+      "order": 19,
+      "featured": false,
+      "tags": [
+        "polymorphism",
+        "oop",
+        "architecture",
+        "dart",
+        "flutter"
+      ]
     }
   ]
 }
