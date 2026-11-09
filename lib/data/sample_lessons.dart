@@ -19,7 +19,7 @@ const sampleLessons = <Lesson>[
         '2. while loop — when you repeat until something changes.\n'
         '3. for-in loop — when you go through every item in a list.\n\n'
         'Watch the video above, then download loop_example.dart and run it. Change the list, change the number, and see the screen update. That is the whole lesson.',
-    youtubeId: 'dQw4w9WgXcQ', // ← REPLACE with your real video ID
+    youtubeId: '6msdwHB5Fd8',
     dartFileName: 'loop_example.dart',
     dartFileUrl: '',
     codePreview: 'for (var i = 0; i < fruits.length; i++) {\n'
@@ -42,7 +42,7 @@ const sampleLessons = <Lesson>[
         'setState() is that tell. You change a variable inside setState, Flutter rebuilds that widget, and the new value appears on screen.\n\n'
         'Without setState the variable changes in memory, but the screen stays old. With setState, variable + screen stay in sync.\n\n'
         'Rule to remember: change the data inside setState, never outside it. Download setstate_example.dart, press the + button, and watch the number change.',
-    youtubeId: 'dQw4w9WgXcQ', // ← REPLACE with your real video ID
+    youtubeId: 'aQpx31GqD34',
     dartFileName: 'setstate_example.dart',
     dartFileUrl: '',
     codePreview: 'setState(() {\n  counter++;\n});',
@@ -62,7 +62,7 @@ const sampleLessons = <Lesson>[
         'If you understand widgets, you understand Flutter.\n\n'
         'A widget is one small piece of the screen. A Text widget shows text. A Container gives it padding and colour. A Column stacks widgets vertically.\n\n'
         'You build a screen by putting small widgets inside bigger widgets. That is all there is to it — no magic, just nesting.',
-    youtubeId: 'dQw4w9WgXcQ', // ← REPLACE with your real video ID
+    youtubeId: 'OIvXtu14QlQ',
     dartFileName: 'widgets_example.dart',
     dartFileUrl: '',
     codePreview: 'Column(\n  children: [\n    Text("Hello"),\n    ElevatedButton(\n      onPressed: () {},\n      child: Text("Tap me"),\n    ),\n  ],\n)',

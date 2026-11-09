@@ -65,7 +65,13 @@ class _TopicsPageState extends State<TopicsPage> {
           StreamBuilder(
             stream: LessonService.watchLessons(),
             builder: (context, snap) {
-              var lessons = snap.data ?? sampleLessons;
+              if (snap.connectionState == ConnectionState.waiting && !snap.hasData) {
+                return const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 48.0),
+                  child: Center(child: CircularProgressIndicator(color: Colors.black)),
+                );
+              }
+              var lessons = snap.data ?? [];
               if (selected != 'All') {
                 lessons = lessons.where((l) => l.category == selected).toList();
               }

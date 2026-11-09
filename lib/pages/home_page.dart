@@ -23,7 +23,13 @@ class HomePage extends StatelessWidget {
       child: StreamBuilder(
         stream: LessonService.watchLessons(),
         builder: (context, snap) {
-          final lessons = snap.data ?? sampleLessons;
+          if (snap.connectionState == ConnectionState.waiting && !snap.hasData) {
+            return const Padding(
+              padding: EdgeInsets.symmetric(vertical: 64.0),
+              child: Center(child: CircularProgressIndicator(color: Colors.black)),
+            );
+          }
+          final lessons = snap.data ?? [];
           final featured = lessons.where((l) => l.featured).toList();
 
           return Column(
@@ -251,12 +257,12 @@ class HomePage extends StatelessWidget {
                         TextButton.icon(
                           onPressed: () => context.go('/topics'),
                           icon: const Icon(Icons.grid_view_rounded, size: 16),
-                          label: const Text('View All →', style: TextStyle(fontWeight: FontWeight.w700)),
+                          label: Text('View All (${lessons.length}) →', style: const TextStyle(fontWeight: FontWeight.w700)),
                         ),
                       ],
                     ),
                     const SizedBox(height: 16),
-                    _lessonGrid(lessons),
+                    _lessonGrid(lessons.take(6).toList()),
                   ],
                 ),
               ),

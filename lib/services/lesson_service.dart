@@ -10,19 +10,20 @@ import '../models/lesson.dart';
 // assets/dart_files/ + rebuild + upload again. That is it.
 
 class LessonService {
-  static List<Lesson>? _cache;
-
   static Future<List<Lesson>> getLessons() async {
-    if (_cache != null) return _cache!;
-    final raw = await rootBundle.loadString('assets/lessons.json');
-    final data = jsonDecode(raw) as Map<String, dynamic>;
-    final list = (data['lessons'] as List)
-        .map((e) => Lesson.fromMap(
-            e['id'] as String, Map<String, dynamic>.from(e)))
-        .toList()
-      ..sort((a, b) => a.order.compareTo(b.order));
-    _cache = list;
-    return list;
+    try {
+      final raw = await rootBundle.loadString('assets/lessons.json');
+      final data = jsonDecode(raw) as Map<String, dynamic>;
+      final list = (data['lessons'] as List)
+          .map((e) => Lesson.fromMap(
+              e['id'] as String, Map<String, dynamic>.from(e)))
+          .toList()
+        ..sort((a, b) => a.order.compareTo(b.order));
+      return list;
+    } catch (e) {
+      print('Error loading lessons.json: $e');
+      return [];
+    }
   }
 
   static Stream<List<Lesson>> watchLessons() async* {
